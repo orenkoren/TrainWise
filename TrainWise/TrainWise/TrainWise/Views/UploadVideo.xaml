@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainWise.Views.UploadVideo"
+             xmlns:local="clr-namespace:TrainWise.MarkupExtensions">
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontSize" Value="Micro"/>
+            <Setter Property="BorderColor" Value="Black"/>
+            <Setter Property="BackgroundColor" Value="White"/>
+            <Setter Property="HorizontalOptions" Value="Start"/>
+            <Setter Property="BorderWidth" Value="1"/>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="TrainWise" Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="4" FontSize="Large" FontAttributes="Bold"
+                   TextColor="Black"
+                   VerticalOptions="Center"
+                HorizontalOptions="StartAndExpand" />
+            <Label Text="Slect Video" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"
+                   VerticalOptions="End"
+                HorizontalOptions="CenterAndExpand" />
+            <Editor Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="6"/>
+            <Button Grid.Row="5" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="4" 
+                Image="upload1.png" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"
+                BackgroundColor="White"/>
+            <Label Text="Slect Type" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"
+                   VerticalOptions="End"
+                HorizontalOptions="CenterAndExpand" />
+            <Grid Grid.Row="8" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="9" ColumnSpacing="2" RowSpacing="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Style="ExerciseTypeStyle" Text="Squat" Grid.Column="0"/>
+                <Button Style="ExerciseTypeStyle" Text="Deadlift" Grid.Column="1"/>
+                <Button Style="ExerciseTypeStyle" Text="Bench
+                        Press" Grid.Column="2"/>
+            </Grid>
+
+            <Label Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="5" Text="Number of repetitions"/>
+            <Entry Grid.Row="10" Grid.Column="6" Keyboard="Numeric"/>
+            <Label Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="5" Text="Weight (Kg)"/>
+            <Entry Grid.Row="11" Grid.Column="6" Keyboard="Numeric"/>
+
+            <Button Grid.Row="13" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="4"
+                    Text="Upload"/>
+
+
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

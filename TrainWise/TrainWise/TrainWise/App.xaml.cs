@@ -14,7 +14,7 @@ namespace TrainWise
             InitializeComponent();
 
 
-            MainPage = new MainPage();
+            MainPage = new UploadVideo();
         }
 
         protected override void OnStart ()

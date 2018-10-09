@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainWise.Views.LoginPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="TrainWise" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" FontSize="Large"
+                   VerticalOptions="End"
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="User" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Entry Text="User Name" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="Start"
+                   Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" />
+            <Label Text="Password" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Start"/>
+            <Entry Text="Password" IsPassword="True" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="StartAndExpand"
+                   Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"/>
+
+            <Button Text="Login" Grid.Row="3"  Grid.Column="2" Grid.ColumnSpan="3"
+                    VerticalOptions="StartAndExpand"
+                HorizontalOptions="CenterAndExpand"/>
+
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

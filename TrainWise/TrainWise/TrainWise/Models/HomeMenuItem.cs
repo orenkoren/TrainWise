@@ -7,7 +7,8 @@ namespace TrainWise.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        Greet
     }
     public class HomeMenuItem
     {
