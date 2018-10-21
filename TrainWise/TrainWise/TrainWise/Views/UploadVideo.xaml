@@ -54,10 +54,10 @@
             <Label Text="Slect Video" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"
                    VerticalOptions="End"
                 HorizontalOptions="CenterAndExpand" />
-            <Editor Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="6"/>
+            <Label Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="6" x:Name="FileName" FontSize="Micro"/>
             <Button Grid.Row="5" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="4" 
                 Image="upload1.png" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"
-                BackgroundColor="White"/>
+                BackgroundColor="White" Clicked="SelectVideo_Clicked"/>
             <Label Text="Slect Type" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"
                    VerticalOptions="End"
                 HorizontalOptions="CenterAndExpand" />
