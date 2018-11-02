@@ -67,22 +67,19 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <Button Style="ExerciseTypeStyle" Text="Squat" Grid.Column="0"/>
+                <Button Style="ExerciseTypeStyle" Text="Squat" Grid.Column="0" Clicked="Squat_Clicked"/>
                 <Button Style="ExerciseTypeStyle" Text="Deadlift" Grid.Column="1"/>
                 <Button Style="ExerciseTypeStyle" Text="Bench
                         Press" Grid.Column="2"/>
             </Grid>
 
             <Label Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="5" Text="Number of repetitions"/>
-            <Entry Grid.Row="10" Grid.Column="6" Keyboard="Numeric"/>
+            <Entry Grid.Row="10" Grid.Column="6" Keyboard="Numeric" x:Name="Repetitions"/>
             <Label Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="5" Text="Weight (Kg)"/>
-            <Entry Grid.Row="11" Grid.Column="6" Keyboard="Numeric"/>
+            <Entry Grid.Row="11" Grid.Column="6" Keyboard="Numeric" x:Name="Weight"/>
 
             <Button Grid.Row="13" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="4"
-                    Text="Upload"/>
-
-
-
+                    Text="Upload" Clicked="Upload_Clicked"/>
 
         </Grid>
     </ContentPage.Content>

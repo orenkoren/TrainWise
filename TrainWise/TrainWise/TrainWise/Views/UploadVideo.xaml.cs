@@ -13,6 +13,8 @@ namespace TrainWise.Views
     {
         private string UserName { get; }
 
+        private Video CurrentVideo { get; set; }
+
         public UploadVideo()
         {
             InitializeComponent();
@@ -30,20 +32,35 @@ namespace TrainWise.Views
 
             if (file != null)
             {
-                byte[] bytes = File.ReadAllBytes(file.FilePath);
+                
                 FileName.Text = file.FileName;
-                Video vid = new Video
+                CurrentVideo = new Video
                 {
                     VideoName = file.FileName,
-                    ByteArray = bytes,
+                    VideoPath = file.FilePath,
                     OfUser = UserName,
-                    ExerciseType = "Deadlift",
-                    Repetitions = 3,
-                    Weight = 50
                 };
-                //await UploadVideoService.InsertItem(vid);
-                UploadVideoService.InsertGrid(file.FilePath);
+                
             }
+        }
+
+        private void Squat_Clicked(object sender, EventArgs e)
+            => CurrentVideo.ExerciseType = "Squat";
+
+        private void Deadlift_Clicked(object sender, EventArgs e)
+            => CurrentVideo.ExerciseType = "Deadlift";
+
+        private void BenchPress_Clicked(object sender, EventArgs e)
+            => CurrentVideo.ExerciseType = "BenchPress";
+
+        private async void Upload_Clicked(object sender, EventArgs e)
+        {
+            CurrentVideo.Repetitions = int.Parse(Repetitions.Text);
+            CurrentVideo.Weight = int.Parse(Weight.Text);
+
+            byte[] bytes = File.ReadAllBytes(CurrentVideo.VideoPath);
+            await UploadVideoService.InsertItem(CurrentVideo);
+            await StorageService.UploadFileAsync("videocontainer", new MemoryStream(bytes), CurrentVideo.VideoName);
         }
     }
 }

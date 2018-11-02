@@ -18,8 +18,8 @@ namespace TrainWise.User
         [BsonElement("OfUser")]
         public string OfUser { get; set; }
 
-        [BsonElement("ByteArray")]
-        public byte[] ByteArray { get; set; }
+        [BsonElement("VideoPath")]
+        public string VideoPath{ get; set; }
 
         [BsonElement("ExerciseType")]
         public string ExerciseType { get; set; }
