@@ -1,11 +1,9 @@
-﻿using System;
-
+﻿
+using Android;
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Support.V4.App;
 
 namespace TrainWise.Droid
 {
@@ -14,6 +12,7 @@ namespace TrainWise.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            RequestContactsPermissions();
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
@@ -21,5 +20,21 @@ namespace TrainWise.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
+
+        private void RequestContactsPermissions()
+        {
+            if (! ActivityCompat.ShouldShowRequestPermissionRationale(this, Manifest.Permission.ReadExternalStorage)
+                || ! ActivityCompat.ShouldShowRequestPermissionRationale(this, Manifest.Permission.WriteExternalStorage))
+            {
+                string[] PERMISSIONS_CONTACT = {
+                Manifest.Permission.ReadExternalStorage,
+                Manifest.Permission.WriteExternalStorage
+                };
+                // Contact permissions have not been granted yet. Request them directly.
+                ActivityCompat.RequestPermissions(this, PERMISSIONS_CONTACT, 1);
+            }
+        }
     }
+
+
 }

@@ -1,6 +1,7 @@
 ﻿using Plugin.FilePicker;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using TrainWise.Services;
 using TrainWise.User;
 using Xamarin.Forms;
@@ -28,11 +29,13 @@ namespace TrainWise.Views
 
         private async void SelectVideo_Clicked(object sender, EventArgs e)
         {
+
+
             var file = await CrossFilePicker.Current.PickFile();
 
             if (file != null)
             {
-                
+
                 FileName.Text = file.FileName;
                 CurrentVideo = new Video
                 {
@@ -40,7 +43,7 @@ namespace TrainWise.Views
                     VideoPath = file.FilePath,
                     OfUser = UserName,
                 };
-                
+
             }
         }
 
@@ -57,10 +60,14 @@ namespace TrainWise.Views
         {
             CurrentVideo.Repetitions = int.Parse(Repetitions.Text);
             CurrentVideo.Weight = int.Parse(Weight.Text);
-
             byte[] bytes = File.ReadAllBytes(CurrentVideo.VideoPath);
+            Indicator.IsRunning = true;
+            MainGrid.IsVisible = false;
             await UploadVideoService.InsertItem(CurrentVideo);
             await StorageService.UploadFileAsync("videocontainer", new MemoryStream(bytes), CurrentVideo.VideoName);
+            Indicator.IsRunning = false;
+
+            await DisplayAlert("Success", "File has been uploaded", "OK");
         }
     }
 }

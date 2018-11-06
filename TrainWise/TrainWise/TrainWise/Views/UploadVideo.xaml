@@ -16,71 +16,76 @@
     <ContentPage.Content>
 
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+            <Grid x:Name="MainGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <Label Text="TrainWise" Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="4" FontSize="Large" FontAttributes="Bold"
+                <Label Text="TrainWise" Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="4" FontSize="Large" FontAttributes="Bold"
                    TextColor="Black"
                    VerticalOptions="Center"
                 HorizontalOptions="StartAndExpand" />
-            <Label Text="Slect Video" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"
+                <Label Text="Slect Video" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"
                    VerticalOptions="End"
                 HorizontalOptions="CenterAndExpand" />
-            <Label Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="6" x:Name="FileName" FontSize="Micro"/>
-            <Button Grid.Row="5" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="4" 
+                <Label Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="6" x:Name="FileName" FontSize="Micro"/>
+                <Button Grid.Row="5" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="4" 
                 Image="upload1.png" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"
                 BackgroundColor="White" Clicked="SelectVideo_Clicked"/>
-            <Label Text="Slect Type" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"
+                <Label Text="Slect Type" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"
                    VerticalOptions="End"
                 HorizontalOptions="CenterAndExpand" />
-            <Grid Grid.Row="8" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="9" ColumnSpacing="2" RowSpacing="0" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-                <Button Style="ExerciseTypeStyle" Text="Squat" Grid.Column="0" Clicked="Squat_Clicked"/>
-                <Button Style="ExerciseTypeStyle" Text="Deadlift" Grid.Column="1"/>
-                <Button Style="ExerciseTypeStyle" Text="Bench
+                <Grid Grid.Row="8" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="9" ColumnSpacing="2" RowSpacing="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Style="ExerciseTypeStyle" Text="Squat" Grid.Column="0" Clicked="Squat_Clicked"/>
+                    <Button Style="ExerciseTypeStyle" Text="Deadlift" Grid.Column="1"/>
+                    <Button Style="ExerciseTypeStyle" Text="Bench
                         Press" Grid.Column="2"/>
-            </Grid>
+                </Grid>
 
-            <Label Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="5" Text="Number of repetitions"/>
-            <Entry Grid.Row="10" Grid.Column="6" Keyboard="Numeric" x:Name="Repetitions"/>
-            <Label Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="5" Text="Weight (Kg)"/>
-            <Entry Grid.Row="11" Grid.Column="6" Keyboard="Numeric" x:Name="Weight"/>
+                <Label Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="5" Text="Number of repetitions"/>
+                <Entry Grid.Row="10" Grid.Column="6" Keyboard="Numeric" x:Name="Repetitions"/>
+                <Label Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="5" Text="Weight (Kg)"/>
+                <Entry Grid.Row="11" Grid.Column="6" Keyboard="Numeric" x:Name="Weight"/>
 
-            <Button Grid.Row="13" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="4"
+                <Button Grid.Row="13" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="4"
                     Text="Upload" Clicked="Upload_Clicked"/>
 
+                
+
+            </Grid>
+            <ActivityIndicator IsEnabled="True" IsRunning="False" IsVisible="True" x:Name="Indicator" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
