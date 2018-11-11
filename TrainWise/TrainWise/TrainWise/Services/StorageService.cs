@@ -1,5 +1,6 @@
 ﻿using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
+using Microsoft.WindowsAzure.Storage.Core.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -55,12 +56,12 @@ namespace TrainWise.Services
             return null;
         }
 
-        public static async Task<string> UploadFileAsync(string videoContainer, Stream stream, string videoName)
+        public static async Task<string> UploadFileAsync(string videoContainer, Stream stream, string videoName, Progress<StorageProgress> prog)
         {
             var container = GetContainer(videoContainer);
             await container.CreateIfNotExistsAsync();
             var fileBlob = container.GetBlockBlobReference(videoName);
-            await fileBlob.UploadFromStreamAsync(stream);
+            await fileBlob.UploadFromStreamAsync(stream, stream.Length, null, null, null, prog, new System.Threading.CancellationToken());
 
             return videoName;
         }

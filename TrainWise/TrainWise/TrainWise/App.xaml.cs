@@ -1,33 +1,30 @@
-﻿using System;
+﻿using TrainWise.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using TrainWise.Views;
 
-[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace TrainWise
 {
     public partial class App : Application
     {
 
-        public App ()
+        public App()
         {
             InitializeComponent();
-
-
-            MainPage = new UploadVideo();
+            MainPage = new LoginPage();
         }
 
-        protected override void OnStart ()
+        protected override void OnStart()
         {
             // Handle when your app starts
         }
 
-        protected override void OnSleep ()
+        protected override void OnSleep()
         {
             // Handle when your app sleeps
         }
 
-        protected override void OnResume ()
+        protected override void OnResume()
         {
             // Handle when your app resumes
         }

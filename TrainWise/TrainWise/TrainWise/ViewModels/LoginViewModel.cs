@@ -14,8 +14,8 @@ namespace TrainWise.ViewModels
         public LoginViewModel()
         {
             Title = "TrainWise";
-            Username = "User Name";
-            Password = "Password";
+            Username = string.Empty;
+            Password = string.Empty;
         }
 
     }

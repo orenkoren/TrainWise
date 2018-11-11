@@ -4,40 +4,42 @@
              x:Class="TrainWise.Views.LoginPage">
     <ContentPage.Content>
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <Grid x:Name="MainGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <Label Text="{Binding Title}" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" FontSize="Large"
+                <Label Text="{Binding Title}" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" FontSize="Large" FontAttributes="Bold"
                    VerticalOptions="End"
                 HorizontalOptions="CenterAndExpand" />
-            <Label Text="User" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center"/>
-            <Entry Text="{Binding Username, Mode=TwoWay}" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="Start"
-                   Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" />
-            <Label Text="Password" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Start"/>
-            <Entry Text="{Binding Password}" IsPassword="True" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="StartAndExpand"
-                   Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"/>
+                <Label Text="User" FontSize="Large" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Entry Text="{Binding Username, Mode=TwoWay}" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="Fill"
+                   Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" x:Name="UsernameEntry"/>
+                <Label Text="Password" FontSize="Large" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <Entry Text="{Binding Password}" IsPassword="True" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="Fill"
+                   Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" x:Name="PasswordEntry"/>
 
-            <Button Text="Login" Grid.Row="3"  Grid.Column="2" Grid.ColumnSpan="3" Clicked="Login_Clicked"
-                    VerticalOptions="StartAndExpand"
-                HorizontalOptions="CenterAndExpand"/>
+                <Button Text="Login" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" Clicked="Login_Clicked" FontSize="Large" BackgroundColor="AliceBlue"
+                    VerticalOptions="Fill"
+                HorizontalOptions="Fill"/>
+            </Grid>
+
+            <ActivityIndicator IsEnabled="True" IsRunning="False" IsVisible="True" x:Name="Indicator" />
         </Grid>
 
-        
-        
     </ContentPage.Content>
 </ContentPage>
